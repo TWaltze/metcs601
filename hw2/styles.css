@@ -42,4 +42,7 @@ table tr th {
 
 .col-1-2 {
     width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
 }
