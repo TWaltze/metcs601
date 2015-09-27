@@ -28,11 +28,11 @@ table {
 }
 
 table thead {
-    color: #13627B;
+    color: #225A6D;
 }
 
 table tr {
-    border: 1px solid #13627B;
+    border: 1px solid #225A6D;
 }
 
 table tbody tr:nth-child(odd) {
