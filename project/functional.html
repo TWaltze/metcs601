@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MET CS 601 Project - Functional Specifications</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6rem;
+        }
+
+        .wrapper {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:hover {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Functional Specifications</h1>
+        <p>
+            This application was originally developed several years ago, in 2010. Since then though it has not been
+            updated or brought inline with modern day browser capbilities. My proposal is to completely rewrite the
+            application using new technology.
+        </p>
+        <p>
+            This application will be split into a frontend and a backend. The frontend will use:
+            <ul>
+                <li>AngularJS (Javascript)</li>
+                <li>Grunt</li>
+                <li>LESS</li>
+            </ul>
+
+            The backend will use:
+            <ul>
+                <li>Laravel (PHP)</li>
+                <li>MySQL</li>
+            </ul>
+        </p>
+        <p>
+            The frontend will do zero server side processing and get all relevant data through AJAX requests to a
+            REST API that the backend provides. The backend will behave as single source of truth, whereas the frontend
+            will behave more or less as a 3rd party merely consuming the provided API. This gives the ability to easily
+            expand this application to other platforms (iOS, Android, etc) without rewriting various database and
+            request logic.
+        </p>
+        <p>
+            The application contains 3 main pages:
+            <ul>
+                <li>Landing page (Registration and Login)</li>
+                <li>Profile (Drop history)</li>
+                <li>Account settings</li>
+            </ul>
+        </p>
+        <h3>Landing Page</h3>
+        <p>
+            Here the user can login if they have an account, or they can create a new account with a username,
+            email, and password. The username they use will also act as their personal URL. The user with the username
+            "tyler" will have their page accessible at http://qikdrop.com/tyler. After logging in or creating a new
+            account, they will be directed to their profile page.
+        </p>
+        <h3>Profile Page</h3>
+        <p>
+            This is where most of a user's actions are contained. On this page, a user is presented with a text box, a
+            file upload input, and a linear stream. In this respect, it would look similar to Twitter's profile pages.
+            A user can choose to upload a file and/or post a piece of text, whereas after it would be placed in the
+            stream below. Here, they can also access a search box that will filter their stream based on their search
+            term. Their drop stream will be a linear stack with their newest drops at the top. All profile pages are
+            public by default. A user can also choose to delete individual drops from their account/stream with a
+            single click. Other users can choose to report a user's drop with a single click if they deem it
+            appropriate (Copywrite, illegal, etc).
+        </p>
+        <h3>Account Settings Page</h3>
+        <p>
+            This page will contain various user options:
+            <ul>
+                <li>Change your username</li>
+                <li>Change your password</li>
+                <li>Make your profile private</li>
+            </ul>
+        </p>
+        <h3>Prototype</h3>
+        <p>
+            The current version of the website can be viewed at <a href="http://qikdrop.com">QikDrop.com</a>.
+            The general layout of the new version will remain similar, but it will provide improved functionality
+            such as better file upload handling, faster searches, etc. It will also be given a new color scheme and
+            general design language.
+        </p>
+    </div>
+</body>
+</html>
