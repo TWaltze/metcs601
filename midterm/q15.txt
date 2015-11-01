@@ -1,0 +1,4 @@
+No, the selector would not select anything.
+
+There are no span elements that are direct siblings with any of the em elements that are both direct children
+of a cite element.

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Question 9</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 300px;
+
+            display: inline-block;
+            background: blue;
+            margin: 20px;
+        }
+
+        .box--small {
+            width: 100px;
+            height: 200px;
+
+            display: inline-block;
+            background: green;
+            margin: 20px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <p>
+                An element's height and width are what determine an element's dimensions within the general box model.
+                These dimensions directly affect where an element will be laid out, depending on several other properties
+                (display, padding, position, float, etc).
+            </p>
+            <p>
+                As you can see below, the size of an element affects where in the general layout the element is put.
+                Sometimes it causes a box to be pushed to a new line.
+            </p>
+            <div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div>
+                <div class="box--small"></div>
+                <div class="box--small"></div>
+                <div class="box--small"></div>
+                <div class="box--small"></div>
+                <div class="box--small"></div>
+            </div>
+        </div>
+    </body>
+</html>
