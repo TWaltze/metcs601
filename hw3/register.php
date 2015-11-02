@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require('db.php');
 
 $errors = [];
@@ -28,7 +30,25 @@ if (array_key_exists('email', $_POST) && array_key_exists('password', $_POST)) {
         $query->bindValue(':password', $password);
 
         $query->execute();
+
+        $_SESSION['email'] = $email;
     }
+} else if (array_key_exists('newPassword', $_POST)) {
+    $query = $db->prepare("UPDATE users SET password = AES_ENCRYPT(:password, 'sugar') WHERE AES_DECRYPT(email, 'sugar') = :email");
+    $query->bindValue(':email', $_SESSION['email']);
+    $query->bindValue(':password', $_POST['newPassword']);
+
+    $query->execute();
+}
+
+if (array_key_exists('email', $_SESSION)) {
+    $query = $db->prepare("SELECT AES_DECRYPT(password, 'sugar') as password FROM users WHERE AES_DECRYPT(email, 'sugar') = :email");
+    $query->bindValue(':email', $_SESSION['email']);
+
+    $query->execute();
+
+    $row = $query->fetch();
+    $currentPassword = $row['password'];
 }
 
 ?>
@@ -62,6 +82,21 @@ if (array_key_exists('email', $_POST) && array_key_exists('password', $_POST)) {
                     ?>
                 </div>
             </form>
+
+            <?php if (array_key_exists('email', $_SESSION)) { ?>
+            <h1>Reset Password</h1>
+            <form method="post">
+                <input type="password" name="newPassword" placeholder="New Password" required />
+                <input type="submit" value="Reset" />
+            </form>
+
+            <h1>
+                View password <input type="checkbox" id="viewPassword" />
+                <span id="password">
+                    <?php echo $currentPassword; ?>
+                </span>
+            </h1>
+            <?php } ?>
         </div>
     </body>
 </html>

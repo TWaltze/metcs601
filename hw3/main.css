@@ -23,3 +23,11 @@ input {
 .error {
     color: red;
 }
+
+#password {
+    display: none;
+}
+
+#viewPassword:checked + #password {
+    display: inline;
+}
